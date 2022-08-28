@@ -35,9 +35,11 @@ public class UserModel {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         UserModel userModel = (UserModel) o;
-        return Objects.equals(id, userModel.id) && Objects
-                .equals(name, userModel.name) && Objects.equals(email, userModel.email) &&
-                    Objects.equals(password, userModel.password);
+        return Objects
+                .equals(id, userModel.id) && Objects
+                .equals(name, userModel.name) && Objects
+                .equals(email, userModel.email) && Objects
+                .equals(password, userModel.password);
     }
 
     @Override
