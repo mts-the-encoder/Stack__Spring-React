@@ -16,6 +16,9 @@ public class LaunchModel {
     @Column(name = "id")
     private Long id;
 
+    @Column(name = "description")
+    private String description;
+
     @Column(name = "month")
     private String month;
 
@@ -32,6 +35,29 @@ public class LaunchModel {
     @Column(name = "registration_date")
     private LocalDate registrationDate;
 
+    @Column(name = "type")
+    @Enumerated(value = EnumType.STRING)
+    private LaunchType type;
+
+    @Column(name = "status")
+    @Enumerated(value = EnumType.STRING)
+    private LaunchStatus status;
+
+    @Override
+    public String toString() {
+        return "LaunchModel{" +
+                "id=" + id +
+                ", description='" + description + '\'' +
+                ", month='" + month + '\'' +
+                ", year=" + year +
+                ", user=" + user +
+                ", value=" + value +
+                ", registrationDate=" + registrationDate +
+                ", type=" + type +
+                ", status=" + status +
+                '}';
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -39,28 +65,18 @@ public class LaunchModel {
         LaunchModel that = (LaunchModel) o;
         return Objects
                 .equals(id, that.id) && Objects
+                .equals(description, that.description) && Objects
                 .equals(month, that.month) && Objects
                 .equals(year, that.year) && Objects
                 .equals(user, that.user) && Objects
                 .equals(value, that.value) && Objects
-                .equals(registrationDate, that.registrationDate);
-    }
-
-    @Override
-    public String toString() {
-        return "LaunchModel{" +
-                "id=" + id +
-                ", month='" + month + '\'' +
-                ", year=" + year +
-                ", user=" + user +
-                ", value=" + value +
-                ", registrationDate=" + registrationDate +
-                '}';
+                .equals(registrationDate, that.registrationDate) &&
+                    type == that.type && status == that.status;
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, month, year, user, value, registrationDate);
+        return Objects.hash(id, description, month, year, user, value, registrationDate, type, status);
     }
 
     public Long getId() {
@@ -69,6 +85,14 @@ public class LaunchModel {
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     public String getMonth() {
@@ -109,5 +133,21 @@ public class LaunchModel {
 
     public void setRegistrationDate(LocalDate registrationDate) {
         this.registrationDate = registrationDate;
+    }
+
+    public LaunchType getType() {
+        return type;
+    }
+
+    public void setType(LaunchType type) {
+        this.type = type;
+    }
+
+    public LaunchStatus getStatus() {
+        return status;
+    }
+
+    public void setStatus(LaunchStatus status) {
+        this.status = status;
     }
 }
