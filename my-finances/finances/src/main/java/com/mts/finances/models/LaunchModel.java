@@ -1,5 +1,7 @@
 package com.mts.finances.models;
 
+import com.mts.finances.enums.LaunchStatus;
+import com.mts.finances.enums.LaunchType;
 import lombok.Builder;
 import lombok.Data;
 import org.springframework.data.jpa.convert.threeten.Jsr310JpaConverters;
@@ -7,7 +9,6 @@ import org.springframework.data.jpa.convert.threeten.Jsr310JpaConverters;
 import javax.persistence.*;
 import java.math.BigDecimal;
 import java.time.LocalDate;
-import java.util.Objects;
 
 @Entity
 @Table(name = "launch", schema = "finances")
@@ -48,6 +49,6 @@ public class LaunchModel {
     private LaunchStatus status;
 
     public LaunchModel() {
-        
+
     }
 }

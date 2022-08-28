@@ -1,4 +1,4 @@
-package com.mts.finances.models;
+package com.mts.finances.enums;
 
 public enum LaunchType {
 
