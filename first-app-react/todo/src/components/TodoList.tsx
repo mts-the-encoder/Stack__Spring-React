@@ -7,7 +7,7 @@ const TodoList = () => {
         {
             id: 1,
             title: "We should do this again",
-            done: false
+            done: true
         },
         {
             id: 2,
@@ -29,7 +29,7 @@ const TodoList = () => {
             <tbody>
                 {
                     todos?.map(
-                        todo => (<TodoListItem key={todo.id}/>)
+                        todo => (<TodoListItem key={todo.id} todo={todo}/>)
                     )
                 }
             </tbody>
