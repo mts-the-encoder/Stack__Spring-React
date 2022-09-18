@@ -1,16 +1,16 @@
-import React, { createContext, useEffect, useState } from "react";
+import React, { createContext, useState, useEffect } from 'react';
 import { TodoContextType } from './TodoContextType';
-import { Todo } from './../models/Todo';
+import { Todo } from '../models/Todo';
 import { get, save } from '../services/TodoService';
 
 export const TodoContext = createContext<TodoContextType>({
     todos: [],
-    addTodo: () => {},
-    removeTodo: () => {},
-    toggle: () => {},
+    addTodo: () => { },
+    removeTodo: () => { },
+    toggle: () => { },
 });
 
-const TodoProvider = (props: any) => { 
+const TodoProvider = (props: any) => {
     const [todos, setTodos] = useState<Todo[]>(get);
 
     useEffect(() => {
@@ -38,6 +38,6 @@ const TodoProvider = (props: any) => {
             {props.children}
         </TodoContext.Provider>
     );
-};
+}
 
 export default TodoProvider;

@@ -1,17 +1,13 @@
-import React from "react";
-import ReactDOM from "react-dom/client";
-import App from "./components/App";
-import reportWebVitals from "./reportWebVitals";
-import "./index";
+import React from 'react';
+import ReactDOM from 'react-dom';
+import * as serviceWorker from './serviceWorker';
+import App from './components/App';
 
-const root = ReactDOM.createRoot(
-  document.getElementById("root") as HTMLElement
-);
-
-root.render(
+ReactDOM.render(
   <React.StrictMode>
-    <App/>
-  </React.StrictMode>
+    <App />
+  </React.StrictMode>,
+  document.getElementById('root')
 );
 
-reportWebVitals();
+serviceWorker.unregister();
