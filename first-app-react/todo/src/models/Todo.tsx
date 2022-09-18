@@ -5,4 +5,4 @@ export class Todo {
         public done: boolean) {
             
         }
-}
+};
